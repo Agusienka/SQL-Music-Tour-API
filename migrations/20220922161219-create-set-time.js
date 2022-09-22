@@ -1,15 +1,19 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('MeetGreets', {
-     
-      meet_greet_id: {
-        allowNull: false,
-        autoIncrement: true,
+    await queryInterface.createTable('SetTimes', {
+      
+      set_time_id: {
+        type: Sequelize.INTEGER,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        autoIncrement: true,
+        allowNull: false
       },
       event_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      stage_id: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
@@ -17,11 +21,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      meet_start_time: {
+      start_time: {
         type: Sequelize.DATE,
         allowNull: false
       },
-      meet_end_time: {
+      end_time: {
         type: Sequelize.DATE,
         allowNull: false
       },
@@ -36,6 +40,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('MeetGreets');
+    await queryInterface.dropTable('SetTimes');
   }
 };
