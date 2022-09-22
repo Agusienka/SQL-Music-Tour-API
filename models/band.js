@@ -16,9 +16,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Band.init({
     band_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER
     },
     name: {
         type: DataTypes.STRING,
