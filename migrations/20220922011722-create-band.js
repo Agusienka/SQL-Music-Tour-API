@@ -23,6 +23,10 @@ module.exports = {
       end_time: {
         type: Sequelize.DATE,
         allowNull: false,
+      },
+      recommendation: {
+        type: Sequelize.STRING,
+        allowNull: false,
       }
     })
   },

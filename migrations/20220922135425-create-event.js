@@ -1,8 +1,7 @@
-'use strict';
+'use strict'
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Events', {
-      
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('events', {
       event_id: {
         allowNull: false,
         autoIncrement: true,
@@ -10,24 +9,24 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       date: {
         type: Sequelize.DATE,
         allowNull: false
       },
       start_time: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       end_time: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       }
-    });
+    })
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Events');
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('events')
   }
-};
+}
